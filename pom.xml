@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.newbiest</groupId>
-    <artifactId>common-statemachine</artifactId>
+    <artifactId>statusmachine</artifactId>
     <version>1.0.0.RELEASE</version>
     <packaging>jar</packaging>
 
