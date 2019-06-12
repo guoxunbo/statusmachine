@@ -24,5 +24,5 @@ databaseChangeLog:
       file: db.changelog-0.0.1.status_model_event_role.yaml
       relativeToChangelogFile: true
   - include:
-      file: db.changelog-0.0.2.event_status.yaml
+      file: db.changelog-init_sm_table_and_index_ts.yaml
       relativeToChangelogFile: true

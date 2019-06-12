@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: create-status_machine_status_model-table
+      id: create-status_machine_status_model_event_role_-table
       author: Xunbo Guo
       comment: Create table COM_SM_STATUS_MODEL_EVENT_ROLE
       changes:
