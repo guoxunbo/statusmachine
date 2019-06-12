@@ -15,7 +15,6 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
                     nullable: false
-                    constraintName: PK_SM_EVENT_STATUS
                   remarks: 主键
               - column:
                   name: ACTIVE_FLAG
@@ -40,11 +39,11 @@ databaseChangeLog:
                   type: varchar(64)
                   remarks: 源状态大类
               - column:
-                  name: SOURCE_STATE
+                  name: SOURCE_STATUS
                   type: varchar(64)
                   remarks: 源状态
               - column:
-                  name: SOURCE_SUB_STATE
+                  name: SOURCE_SUB_STATUS
                   type: varchar(64)
                   remarks: 源状态小类
               - column:
@@ -52,10 +51,10 @@ databaseChangeLog:
                   type: varchar(64)
                   remarks: 目标状态大类
               - column:
-                  name: TARGET_STATE
+                  name: TARGET_STATUS
                   type: varchar(64)
                   remarks: 目标状态
               - column:
-                  name: TARGET_SUB_STATE
+                  name: TARGET_SUB_STATUS
                   type: varchar(64)
                   remarks: 目标状态小类

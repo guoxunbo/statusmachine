@@ -15,7 +15,6 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
                     nullable: false
-                    constraintName: PK_SM_STATUS_CATEGORY
                   remarks: 主键
               - column:
                   name: ACTIVE_FLAG
@@ -70,4 +69,4 @@ databaseChangeLog:
         - addUniqueConstraint:
             tableName: COM_SM_STATUS_CATEGORY
             columnNames: ORG_RRN, NAME, CATEGORY
-            constraintname: UK_SC_ORG_NAME_CATEGORY
+            constraintName: UK_SM_SC_ORG_NAME_CATEGORY
