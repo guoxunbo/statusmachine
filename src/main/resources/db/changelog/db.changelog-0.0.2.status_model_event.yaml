@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: drop_some_columns_on_com_sm_status_model_event
+      author: Xunbo Guo
+      comment: drop object_rrn,org_rrn,active_flag on com_sm_status_model_event
+      changes:
+        - dropColumn:
+            columnName: OBJECT_RRN
+            tableName: COM_SM_STATUS_MODEL_EVENT
+        - dropColumn:
+            columnName: ORG_RRN
+            tableName: COM_SM_STATUS_MODEL_EVENT
+        - dropColumn:
+            columnName: ACTIVE_FLAG
+            tableName: COM_SM_STATUS_MODEL_EVENT
