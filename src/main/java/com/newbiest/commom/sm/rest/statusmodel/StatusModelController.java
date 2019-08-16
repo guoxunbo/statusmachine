@@ -39,9 +39,6 @@ public class StatusModelController extends AbstractRestController {
     @ApiImplicitParam(name="request", value="request", required = true, dataType = "StatusModelRequest")
     @RequestMapping(value = "/statusModelManage", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
     public StatusModelResponse execute(@RequestBody StatusModelRequest request) throws Exception {
-        log(log, request);
-        SessionContext sc = getSessionContext(request);
-
         StatusModelResponse response = new StatusModelResponse();
         response.getHeader().setTransactionId(request.getHeader().getTransactionId());
         StatusModelResponseBody responseBody = new StatusModelResponseBody();
@@ -56,7 +53,7 @@ public class StatusModelController extends AbstractRestController {
             if (requestSm.getObjectRrn() != null) {
                 statusModel = statusMachineService.getStatusModelByObjectRrn(requestSm.getObjectRrn());
             } else if (!StringUtils.isNullOrEmpty(requestSm.getName())) {
-                statusModel = statusMachineService.getStatusModelByName(statusModel.getName(), sc);
+                statusModel = statusMachineService.getStatusModelByName(statusModel.getName());
             }
             if (statusModel == null) {
                 throw new ClientParameterException(StatusMachineExceptions.STATUS_MODEL_IS_NOT_EXIST, requestSm.getObjectRrn() != null ? requestSm.getObjectRrn() : requestSm.getName());

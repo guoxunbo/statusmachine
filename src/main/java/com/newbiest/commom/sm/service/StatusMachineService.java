@@ -11,9 +11,9 @@ import com.newbiest.commom.sm.model.StatusModel;
 public interface StatusMachineService {
 
     StatusModel getStatusModelByObjectRrn(long objectRrn) throws ClientException;
-    StatusModel getStatusModelByName(String name, SessionContext sc) throws ClientException;
+    StatusModel getStatusModelByName(String name) throws ClientException;
 
     StatusModel saveStatusModel(StatusModel statusModel) throws ClientException;
 
-    StatusLifeCycle triggerEvent(StatusLifeCycle statusLifeCycle, String eventId, String targetStatus, SessionContext sc) throws ClientException;
+    StatusLifeCycle triggerEvent(StatusLifeCycle statusLifeCycle, String eventId, String targetStatus) throws ClientException;
 }

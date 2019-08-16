@@ -7,6 +7,7 @@ import com.newbiest.base.exception.ExceptionManager;
 import com.newbiest.base.utils.CollectionUtils;
 import com.newbiest.base.utils.SessionContext;
 import com.newbiest.base.utils.StringUtils;
+import com.newbiest.base.utils.ThreadLocalContext;
 import com.newbiest.commom.sm.exception.StatusMachineExceptions;
 import com.newbiest.commom.sm.model.Event;
 import com.newbiest.commom.sm.model.EventStatus;
@@ -41,9 +42,9 @@ public class StatusMachineServiceImpl implements StatusMachineService {
         }
     }
 
-    public StatusModel getStatusModelByName(String name, SessionContext sc) throws ClientException {
+    public StatusModel getStatusModelByName(String name) throws ClientException {
         try {
-            List<StatusModel> statusModelList = (List<StatusModel>) statusModelRepository.findByNameAndOrgRrn(name, sc.getOrgRrn());
+            List<StatusModel> statusModelList = (List<StatusModel>) statusModelRepository.findByNameAndOrgRrn(name, ThreadLocalContext.getOrgRrn());
             if (CollectionUtils.isNotEmpty(statusModelList)) {
                 return statusModelList.get(0);
             }
@@ -66,11 +67,10 @@ public class StatusMachineServiceImpl implements StatusMachineService {
      * @param statusLifeCycle 受状态机管控的对象
      * @param eventId 事件
      * @param targetStatus 目标状态，如果指定则强转至目标状态
-     * @param sc
      * @return
      * @throws ClientException
      */
-    public StatusLifeCycle triggerEvent(StatusLifeCycle statusLifeCycle, String eventId, String targetStatus, SessionContext sc) throws ClientException {
+    public StatusLifeCycle triggerEvent(StatusLifeCycle statusLifeCycle, String eventId, String targetStatus) throws ClientException {
         try {
             StatusModel statusModel = getStatusModelByObjectRrn(statusLifeCycle.getStatusModelRrn());
             Optional<Event> optional = statusModel.getEvents().stream().filter(event1 -> event1.getName().equals(eventId)).findFirst();
