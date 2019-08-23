@@ -160,13 +160,12 @@ public class StatusMachineServiceImpl implements StatusMachineService {
                         }
                     }
                 }
-                if (!StringUtils.isNullOrEmpty(targetStatus)) {
-                    if (matchStatus.getTargetStatus().equalsIgnoreCase(targetStatus)) {
-                        return matchStatus;
+                if (!StringUtils.isNullOrEmpty(targetStatus) && matchStatus != null) {
+                    if (!matchStatus.getTargetStatus().equalsIgnoreCase(targetStatus)) {
+                        continue;
                     }
-                } else {
-                    return matchStatus;
                 }
+                return matchStatus;
             }
             return matchStatus;
         } catch (Exception e) {
