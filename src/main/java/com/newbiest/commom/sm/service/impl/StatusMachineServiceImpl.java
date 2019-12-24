@@ -1,13 +1,11 @@
 package com.newbiest.commom.sm.service.impl;
 
-import com.google.common.collect.Lists;
 import com.newbiest.base.exception.ClientException;
 import com.newbiest.base.exception.ClientParameterException;
 import com.newbiest.base.exception.ExceptionManager;
+import com.newbiest.base.threadlocal.ThreadLocalContext;
 import com.newbiest.base.utils.CollectionUtils;
-import com.newbiest.base.utils.SessionContext;
 import com.newbiest.base.utils.StringUtils;
-import com.newbiest.base.utils.ThreadLocalContext;
 import com.newbiest.commom.sm.exception.StatusMachineExceptions;
 import com.newbiest.commom.sm.model.Event;
 import com.newbiest.commom.sm.model.EventStatus;
@@ -44,7 +42,7 @@ public class StatusMachineServiceImpl implements StatusMachineService {
 
     public StatusModel getStatusModelByName(String name) throws ClientException {
         try {
-            List<StatusModel> statusModelList = (List<StatusModel>) statusModelRepository.findByNameAndOrgRrn(name, ThreadLocalContext.getOrgRrn());
+            List<StatusModel> statusModelList = statusModelRepository.findByNameAndOrgRrn(name, ThreadLocalContext.getOrgRrn());
             if (CollectionUtils.isNotEmpty(statusModelList)) {
                 return statusModelList.get(0);
             }

@@ -1,7 +1,6 @@
 package com.newbiest.commom.sm.service;
 
 import com.newbiest.base.exception.ClientException;
-import com.newbiest.base.utils.SessionContext;
 import com.newbiest.commom.sm.model.StatusLifeCycle;
 import com.newbiest.commom.sm.model.StatusModel;
 

@@ -1,7 +1,7 @@
 package com.newbiest.commom.sm.rest.statusmodel;
 
+import com.newbiest.base.msg.RequestBody;
 import com.newbiest.commom.sm.model.StatusModel;
-import com.newbiest.msg.RequestBody;
 import lombok.Data;
 
 /**
