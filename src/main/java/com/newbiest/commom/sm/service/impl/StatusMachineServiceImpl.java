@@ -1,5 +1,6 @@
 package com.newbiest.commom.sm.service.impl;
 
+import com.newbiest.base.annotation.BaseJpaFilter;
 import com.newbiest.base.exception.ClientException;
 import com.newbiest.base.exception.ClientParameterException;
 import com.newbiest.base.exception.ExceptionManager;
@@ -27,6 +28,7 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 @Slf4j
+@BaseJpaFilter
 public class StatusMachineServiceImpl implements StatusMachineService {
 
     @Autowired
@@ -34,7 +36,7 @@ public class StatusMachineServiceImpl implements StatusMachineService {
 
     public StatusModel getStatusModelByObjectRrn(long objectRrn) throws ClientException {
         try {
-            return (StatusModel) statusModelRepository.findByObjectRrn(objectRrn);
+            return statusModelRepository.findByObjectRrn(objectRrn);
         } catch (Exception e) {
             throw ExceptionManager.handleException(e, log);
         }
@@ -42,11 +44,7 @@ public class StatusMachineServiceImpl implements StatusMachineService {
 
     public StatusModel getStatusModelByName(String name) throws ClientException {
         try {
-            List<StatusModel> statusModelList = statusModelRepository.findByNameAndOrgRrn(name, ThreadLocalContext.getOrgRrn());
-            if (CollectionUtils.isNotEmpty(statusModelList)) {
-                return statusModelList.get(0);
-            }
-            return null;
+            return statusModelRepository.findOneByName(name);
         } catch (Exception e) {
             throw ExceptionManager.handleException(e, log);
         }
