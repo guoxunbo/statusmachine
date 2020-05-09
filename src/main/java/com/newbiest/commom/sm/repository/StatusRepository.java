@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  * Created by guoxunbo on 2017/11/5.
  */
 @Repository
-public interface StatusRepository extends IRepository<Status, Long> {
+public interface StatusRepository extends IRepository<Status, String> {
 
 }

@@ -34,7 +34,7 @@ public class StatusMachineServiceImpl implements StatusMachineService {
     @Autowired
     StatusModelRepository statusModelRepository;
 
-    public StatusModel getStatusModelByObjectRrn(long objectRrn) throws ClientException {
+    public StatusModel getStatusModelByObjectRrn(String objectRrn) throws ClientException {
         try {
             return statusModelRepository.findByObjectRrn(objectRrn);
         } catch (Exception e) {

@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * Created by guoxunbo on 2017/11/5.
  */
 @Repository
-public interface EventRepository extends IRepository<Event, Long> {
+public interface EventRepository extends IRepository<Event, String> {
 }

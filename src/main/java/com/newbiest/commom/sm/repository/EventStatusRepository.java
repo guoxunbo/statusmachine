@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
  * Created by guoxunbo on 2017/11/5.
  */
 @Repository
-public interface EventStatusRepository extends IRepository<EventStatus, Long> {
+public interface EventStatusRepository extends IRepository<EventStatus, String> {
 }

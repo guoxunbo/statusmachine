@@ -9,7 +9,7 @@ import com.newbiest.commom.sm.model.StatusModel;
  */
 public interface StatusMachineService {
 
-    StatusModel getStatusModelByObjectRrn(long objectRrn) throws ClientException;
+    StatusModel getStatusModelByObjectRrn(String objectRrn) throws ClientException;
     StatusModel getStatusModelByName(String name) throws ClientException;
 
     StatusModel saveStatusModel(StatusModel statusModel) throws ClientException;

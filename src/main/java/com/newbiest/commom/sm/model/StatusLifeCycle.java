@@ -5,7 +5,7 @@ package com.newbiest.commom.sm.model;
  */
 public interface StatusLifeCycle extends LifeCycle {
 
-    Long getStatusModelRrn();
+    String getStatusModelRrn();
 
     /**
      * 取得状态大类
