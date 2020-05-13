@@ -6,7 +6,7 @@
 
     <groupId>com.newbiest</groupId>
     <artifactId>statusmachine</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2.RELEASE</version>
     <packaging>jar</packaging>
 
     <properties>
