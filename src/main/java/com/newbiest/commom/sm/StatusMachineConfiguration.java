@@ -33,10 +33,5 @@ public class StatusMachineConfiguration {
         liquibase.setDropFirst(false);
         return liquibase;
     }
-
-    @PostConstruct
-    public void init() {
-        //注册modelClassLoader
-        ModelFactory.registerModelClassLoader(EventStatus.class.getName(), EventStatus.class.getClassLoader());
-    }
+    
 }

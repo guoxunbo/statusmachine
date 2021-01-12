@@ -6,11 +6,11 @@
 
     <groupId>com.newbiest</groupId>
     <artifactId>statusmachine</artifactId>
-    <version>1.0.2.RELEASE</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
-        <newbiest.framework.version>1.0.5.RELEASE</newbiest.framework.version>
+        <newbiest.framework.version>1.0.6-SNAPSHOT</newbiest.framework.version>
     </properties>
 
     <dependencies>
