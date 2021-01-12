@@ -1,14 +1,10 @@
 package com.newbiest.commom.sm;
 
-import com.newbiest.base.factory.ModelFactory;
-import com.newbiest.commom.sm.model.EventStatus;
 import liquibase.integration.spring.SpringLiquibase;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnResource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
 @Slf4j
